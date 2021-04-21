@@ -10,12 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: echo '$(Build.SourceVersion)'
-
 - task: buildAndReleaseTask@0
   inputs:
-    samplestring: 'Human'
-
+    ioServerUrl: 'http://87e992c641da.ngrok.io'
+    ioServerToken: 'b331c44c-960b-4bd0-89b9-0604119c5df7'
+    workflowServerUrl: 'http://2839eb3c23d1.ngrok.io'
+    releaseType: 'major'
+    additionalWorkflowArgs: '--persona=developer --polaris.url=$(POLARIS_SERVER_URL) --polaris.token=$(POLARIS_ACCESS_TOKEN) --sensitive.package.pattern=''.*(\\+\\+\\+.*(org\\/hdivsamples\\/security)).*'''
