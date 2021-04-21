@@ -13,8 +13,8 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: echo '$(Build.Repository.Name)'
-    
+    script: echo '$(Build)'
+
 - task: buildAndReleaseTask@0
   inputs:
     samplestring: 'Human'
