@@ -10,6 +10,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: echo '$(Build.Repository.Name)'
+    
 - task: buildAndReleaseTask@0
   inputs:
     samplestring: 'Human'
+
