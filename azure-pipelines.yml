@@ -27,6 +27,8 @@ steps:
        echo "$FOO"
        echo "$(is_sast_enabled)"
        echo "$is_sast_enabled"
+       echo "$isSastEnabled"
+       echo "$(isScaEnabled)"
 
 # - task: buildAndReleaseTask@0
 #   inputs:
