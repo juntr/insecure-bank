@@ -35,13 +35,10 @@ steps:
     stage: 'WORKFLOW'
     additionalWorkflowArgs: '--IS_SAST_ENABLED=$(is_sast_enabled) --polaris.project.name=''sig-devsecops/github-io-sample'' --polaris.url=$(POLARIS_SERVER_URL) --polaris.token=$(POLARIS_ACCESS_TOKEN)'
 
-
-
 - task: CopyFiles@2
   inputs:
-    Contents: '**'
+    Contents: 'workflowengine-results.sarif'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
-
 
 - task: PublishBuildArtifacts@1
   inputs:
