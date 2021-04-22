@@ -34,3 +34,9 @@ steps:
     ioManifestUrl: 'https://raw.githubusercontent.com/synopsys-sig/io-artifacts/2021.04/io-manifest.yml'
     stage: 'WORKFLOW'
     additionalWorkflowArgs: '--IS_SAST_ENABLED=$(is_sast_enabled) --polaris.project.name=''sig-devsecops/github-io-sample'' --polaris.url=$(POLARIS_SERVER_URL) --polaris.token=$(POLARIS_ACCESS_TOKEN)'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'CodeAnalysisLogs'
+    publishLocation: 'Container'
