@@ -26,16 +26,14 @@ steps:
        echo "$(FOO)"
        echo "$FOO"
        echo "$(is_sast_enabled)"
-       echo "$is_sast_enabled"
-       echo "$isSastEnabled"
-       echo "$(isScaEnabled)"
+       echo "$(is_sca_enabled)"
 
-# - task: buildAndReleaseTask@0
-#   inputs:
-#     ioServerUrl: 'http://87e992c641da.ngrok.io'
-#     ioServerToken: '$(IO_SERVER_TOKEN)'
-#     workflowServerUrl: 'http://2839eb3c23d1.ngrok.io'
-#     ioManifestUrl: 'https://raw.githubusercontent.com/synopsys-sig/io-artifacts/2021.04/io-manifest.yml'
-#     stage: 'WORKFLOW'
-#     releaseType: 'major'
-#     additionalWorkflowArgs: '--IS_SAST_ENABLED=$(is_sast_enabled) --IS_SCA_ENABLED=$(is_sca_enabled) --polaris.project.name=''sig-devsecops/github-io-sample'' --polaris.url=$(POLARIS_SERVER_URL) --polaris.token=$(POLARIS_ACCESS_TOKEN)'
+- task: buildAndReleaseTask@0
+  inputs:
+    ioServerUrl: 'http://87e992c641da.ngrok.io'
+    ioServerToken: '$(IO_SERVER_TOKEN)'
+    workflowServerUrl: 'http://2839eb3c23d1.ngrok.io'
+    ioManifestUrl: 'https://raw.githubusercontent.com/synopsys-sig/io-artifacts/2021.04/io-manifest.yml'
+    stage: 'WORKFLOW'
+    releaseType: 'major'
+    additionalWorkflowArgs: '--IS_SAST_ENABLED=$(is_sast_enabled) --IS_SCA_ENABLED=$(is_sca_enabled) --polaris.project.name=''sig-devsecops/github-io-sample'' --polaris.url=$(POLARIS_SERVER_URL) --polaris.token=$(POLARIS_ACCESS_TOKEN)'
