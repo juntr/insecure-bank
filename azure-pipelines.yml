@@ -13,9 +13,9 @@ steps:
 - task: buildAndReleaseTask@0
   name: 'Synopsys_Intelligent_Security_Scan_Stage_IO'
   inputs:
-    ioServerUrl: 'http://87e992c641da.ngrok.io'
+    ioServerUrl: $(IO_SERVER_URL)
     ioServerToken: '$(IO_SERVER_TOKEN)'
-    workflowServerUrl: 'http://2839eb3c23d1.ngrok.io'
+    workflowServerUrl: $(WORKFLOW_SERVER_URL)
     ioManifestUrl: 'https://raw.githubusercontent.com/synopsys-sig/io-artifacts/2021.04/io-manifest.yml'
     releaseType: 'major'
     additionalWorkflowArgs: '--persona=developer --polaris.url=$(POLARIS_SERVER_URL) --polaris.token=$(POLARIS_ACCESS_TOKEN) --sensitive.package.pattern=''.*(\\+\\+\\+.*(org\\/hdivsamples\\/security)).*'''
@@ -44,9 +44,9 @@ steps:
 - task: buildAndReleaseTask@0
   name: 'Synopsys_Intelligent_Security_Scan_Stage_WORKFLOW'
   inputs:
-    ioServerUrl: 'http://87e992c641da.ngrok.io'
+    ioServerUrl: $(IO_SERVER_URL)
     ioServerToken: '$(IO_SERVER_TOKEN)'
-    workflowServerUrl: 'http://2839eb3c23d1.ngrok.io'
+    workflowServerUrl: $(WORKFLOW_SERVER_URL)
     ioManifestUrl: 'https://raw.githubusercontent.com/synopsys-sig/io-artifacts/2021.04/io-manifest.yml'
     stage: 'WORKFLOW'
     additionalWorkflowArgs: '--IS_SAST_ENABLED=$(is_sast_enabled) --polaris.project.name=''sig-devsecops/github-io-sample'' --polaris.url=$(POLARIS_SERVER_URL) --polaris.token=$(POLARIS_ACCESS_TOKEN)'
