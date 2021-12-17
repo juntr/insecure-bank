@@ -79,7 +79,7 @@ tool_information:
   enabled: false
   fields:
     project_name: <<POLARIS_PROJECT_NAME>>
-    instance_url: <<POLARIS_SERVER_URL>>
+    instance_url: 'https://csprod.polaris.synopsys.com'
     auth_token: <<POLARIS_ACCESS_TOKEN>>
 - tool_name: blackduck
   enabled: false
