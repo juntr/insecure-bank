@@ -4,9 +4,9 @@ application:
   projectName: synopsys-io-insecure-bank  
 environment:
   scm: 'github'
-  scmOwner: <<SCM_OWNER>>
-  scmRepositoryName: <<SCM_REPO_NAME>>
-  scmBranchName: <<SCM_BRANCH_NAME>>
+  scmOwner: 'akshayme-synp'
+  scmRepositoryName: 'insecure-bank'
+  scmBranchName: 'master'
   bitbucketUserName: <<BITBUCKET_USERNAME>>
   bitbucketPassword: <<BITBUCKET_PASSWORD>>
   bitbucketApiUrl: https://api.bitbucket.org/2.0/repositories/
