@@ -3,7 +3,7 @@
 application:
   projectName: synopsys-io-insecure-bank  
 environment:
-  scm: <<SCM_TYPE>>
+  scm: 'github'
   scmOwner: <<SCM_OWNER>>
   scmRepositoryName: <<SCM_REPO_NAME>>
   scmBranchName: <<SCM_BRANCH_NAME>>
