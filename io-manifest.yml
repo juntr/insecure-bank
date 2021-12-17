@@ -15,17 +15,16 @@ environment:
   githubToken: <<GITHUB_ACCESS_TOKEN>>
   gitlabHostUrl: <<GITLAB_HOST_URL>>
   gitlabToken: <<GITLAB_TOKEN>>
+  enableJira: <<ENABLE_JIRA>>
   jiraProjectName: <<JIRA_PROJECT_NAME>>
   jiraIssuesQuery: <<JIRA_ISSUES_QUERY>>
   jiraApiUrl: <<JIRA_API_URL>>
   jiraUserName: <<JIRA_USERNAME>>
   jiraAuthToken: <<JIRA_AUTH_TOKEN>>
 security:
-  activities:
-    sast:
-      rescanThreshold: <<SAST_RESCAN_THRESHOLD>>
-    sca:
-      rescanThreshold: <<SCA_RESCAN_THRESHOLD>>
+  pipeline:
+    type: "Inline"
+    toolchain: "Synopsys"
 connectors:
 - connector_name: slack
   fields:
