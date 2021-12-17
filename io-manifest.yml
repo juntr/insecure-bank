@@ -3,10 +3,10 @@
 application:
   projectName: "synopsys-io-insecure-bank"
 environment:
-  scm: <<SCM_TYPE>>
-  scmOwner: <<SCM_OWNER>>
-  scmRepositoryName: <<SCM_REPO_NAME>>
-  scmBranchName: <<SCM_BRANCH_NAME>>
+  scm: 'github'
+  scmOwner: 'akshayme-synp'
+  scmRepositoryName: 'insecure-bank'
+  scmBranchName: 'master'
   bitbucketUserName: <<BITBUCKET_USERNAME>>
   bitbucketPassword: <<BITBUCKET_PASSWORD>>
   bitbucketApiUrl: https://api.bitbucket.org/2.0/repositories/
@@ -77,11 +77,11 @@ buildbreaker:
 tool_information:
 - tool_name: polaris
   fields:
-    project_name: <<POLARIS_PROJECT_NAME>>
+    project_name: 'akshayme-synp/insecure-bank'
     instance_url: <<POLARIS_SERVER_URL>>
     auth_token: <<POLARIS_ACCESS_TOKEN>>
 - tool_name: blackduck  
   fields:
-    project_name: <<BLACKDUCK_PROJECT_NAME>>
+    project_name: 'insecure-bank:1.0'
     instance_url: <<BLACKDUCK_SERVER_URL>>
     auth_token: <<BLACKDUCK_ACCESS_TOKEN>>
