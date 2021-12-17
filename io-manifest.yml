@@ -78,12 +78,12 @@ tool_information:
 - tool_name: polaris
   enabled: false
   fields:
-    project_name: <<POLARIS_PROJECT_NAME>>
+    project_name: 'akshayme-synp/insecure-bank'
     instance_url: 'https://csprod.polaris.synopsys.com'
     auth_token: <<POLARIS_ACCESS_TOKEN>>
 - tool_name: blackduck
   enabled: false
   fields:
-    project_name: <<BLACKDUCK_PROJECT_NAME>>
+    project_name: 'insecure-bank:1.0'
     instance_url: <<BLACKDUCK_SERVER_URL>>
     auth_token: <<BLACKDUCK_ACCESS_TOKEN>>
