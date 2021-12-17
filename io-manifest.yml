@@ -1,18 +1,7 @@
 # Copyright (c) 2021 Synopsys, Inc. All rights reserved worldwide.
 
 application:
-  appId: <<APP_ID>>
-  assetId: <<ASSET_ID>>
-  appType: Webapp
-  release: <<RELEASE_TYPE>>
-  microservice: false
-  projectLanguage: Java
-  platformVersion: Java 8
-  buildSystem: Maven
-  riskMatrixRevision: default
-  sourceFilePattern: .*\+\+\+.*(\.java|\.jsp)+.*
-  sensitivePackagePattern: <<SENSITIVE_PACKAGE_PATTERN>>
-  fileChangeThreshold: <<FILE_CHANGE_THRESHOLD>>
+  projectName: synopsys-io-insecure-bank  
 environment:
   scm: <<SCM_TYPE>>
   scmOwner: <<SCM_OWNER>>
