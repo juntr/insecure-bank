@@ -41,6 +41,8 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 		String username = authentication.getName();
 		String password = (String) authentication.getCredentials();
 
+		System.out.println('modified auth file...');
+
 		List<Account> listAccounts = new ArrayList<>();
 		try {
 			listAccounts = accountDao.findUsersByUsernameAndPassword(username.toLowerCase(), password);
