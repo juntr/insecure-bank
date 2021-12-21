@@ -16,6 +16,7 @@ public class StorageFacadeImpl implements StorageFacade {
 	@Override
 	public boolean exists(final String fileName) {
 		File file = new File(url + fileName);
+		System.out.println(fileName);
 		return file.exists();
 	}
 

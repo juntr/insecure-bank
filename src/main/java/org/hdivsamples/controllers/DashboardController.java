@@ -60,6 +60,7 @@ public class DashboardController {
 		model.addAttribute("account", account);
 		model.addAttribute("cashAccounts", cashAccounts);
 		model.addAttribute("creditAccounts", creditAccounts);
+		System.out.println("dashboard return");
 		return "dashboard";
 	}
 

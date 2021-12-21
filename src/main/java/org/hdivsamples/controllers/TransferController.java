@@ -58,6 +58,7 @@ public class TransferController {
 
 		response.addCookie(new Cookie("accountType", AccountType.PERSONAL));
 
+		System.out.println("newTransfer");
 		return "newTransfer";
 	}
 

@@ -2,6 +2,7 @@ package org.hdivsamples.bean;
 
 public class OperationConfirm {
 	public String code;
+	public String okCode;
 
 	public String action;
 

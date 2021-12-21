@@ -11,6 +11,7 @@ public class Transfer {
 	private String toAccount;
 
 	private String description;
+	private String additionalDescription;
 
 	private double amount;
 

@@ -40,6 +40,8 @@ public class TransfersFacadeImpl implements TransfersFacade {
 
 		cashAccountDao.updateCashAccount(transfer.getFromAccount(), InsecureBankUtils.round(amountTotal, 2));
 
+		System.out.println("todo");
+
 		double amount = actualAmount - transfer.getAmount();
 		double amountWithFees = amount - transfer.getFee();
 

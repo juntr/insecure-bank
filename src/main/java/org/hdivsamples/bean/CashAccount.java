@@ -12,6 +12,8 @@ public class CashAccount {
 
 	private String description;
 
+	private String additionalDescription;
+
 	public int getId() {
 		return id;
 	}

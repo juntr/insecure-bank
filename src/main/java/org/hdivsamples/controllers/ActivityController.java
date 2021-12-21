@@ -51,6 +51,8 @@ public class ActivityController {
 		Account account = accountDao.findUsersByUsername(principal.getName()).get(0);
 		List<CashAccount> cashAccounts = cashaccountDao.findCashAccountsByUsername(principal.getName());
 
+		System.out.println(cashAccounts.get(0).getNumber());
+
 		List<Transaction> firstCashAccountTransfers = activityDao.findTransactionsByCashAccountNumber(cashAccounts.get(0).getNumber());
 		List<Transaction> reverseFirstCashAccountTransfers = Lists.reverse(firstCashAccountTransfers);
 

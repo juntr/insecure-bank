@@ -27,6 +27,8 @@ public class AdminController {
 		model.addAttribute("account", account);
 		model.addAttribute("accounts", accounts);
 
+		System.out.println("returning admin string");
+
 		return "admin";
 	}
 

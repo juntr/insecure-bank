@@ -10,6 +10,8 @@ public class Account {
 
 	private String password;
 
+	private String confirmPassword;
+
 	public String getUsername() {
 		return username;
 	}
