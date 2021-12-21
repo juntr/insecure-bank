@@ -1,7 +1,7 @@
 # Copyright (c) 2021 Synopsys, Inc. All rights reserved worldwide.
 
 application:
-  projectName: "insecure-bank"
+  projectName: "insecure bank"
 environment:
   scm: 'github'
   scmOwner: 'akshayme-synp'
