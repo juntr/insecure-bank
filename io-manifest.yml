@@ -80,8 +80,8 @@ tool_information:
     project_name: 'akshayme-synp/insecure-bank'
     instance_url: <<POLARIS_SERVER_URL>>
     auth_token: <<POLARIS_ACCESS_TOKEN>>
-- tool_name: blackduck  
-  fields:
-    project_name: 'insecure-bank:1.0'
-    instance_url: <<BLACKDUCK_SERVER_URL>>
-    auth_token: <<BLACKDUCK_ACCESS_TOKEN>>
+# - tool_name: blackduck  
+#   fields:
+#     project_name: 'insecure-bank:1.0'
+#     instance_url: <<BLACKDUCK_SERVER_URL>>
+#     auth_token: <<BLACKDUCK_ACCESS_TOKEN>>
