@@ -41,7 +41,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 		String username = authentication.getName();
 		String password = (String) authentication.getCredentials();
 
-		System.out.println("password from user is: " + password);
+		System.out.println(password);
 
 		List<Account> listAccounts = new ArrayList<>();
 		try {
