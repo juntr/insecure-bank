@@ -15,5 +15,3 @@
 ## Login credentials
 - username: john
 - password: test
-- adadash
-- fafa
