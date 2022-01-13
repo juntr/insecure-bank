@@ -1,3 +1,3 @@
 @Library('intelligent-orchestration')
 import com.synopsys.*
-new com.synopsys.sigio.EntryPoint().execute()
+new com.demo.pipeline.EntryPoint().execute('io-manifest.yml')
