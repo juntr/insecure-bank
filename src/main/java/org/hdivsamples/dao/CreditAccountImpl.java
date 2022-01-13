@@ -27,6 +27,7 @@ public class CreditAccountImpl implements CreditAccountDao {
 				localAccount.setId(paramResultSet.getInt("id"));
 				localAccount.setNumber(paramResultSet.getString("number"));
 				localAccount.setUsername(paramResultSet.getString("username"));
+				System.out.println(paramResultSet.getString("username"));
 				localAccount.setDescription(paramResultSet.getString("description"));
 				localAccount.setAvailableBalance(paramResultSet.getDouble("availablebalance"));
 				return localAccount;

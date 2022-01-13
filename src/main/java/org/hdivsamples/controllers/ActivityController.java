@@ -62,7 +62,7 @@ public class ActivityController {
 		model.addAttribute("firstCashAccountTransfers", reverseFirstCashAccountTransfers);
 		model.addAttribute("actualCashAccountNumber", cashAccounts.get(0).getNumber());
 
-		return "customAccountActivity";
+		return "accountActivity";
 	}
 
 	@RequestMapping("{account}/detail")

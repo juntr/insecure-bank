@@ -74,7 +74,7 @@ public class DashboardController {
 		model.addAttribute("account", account);
 		model.addAttribute("accountMalicious", account);
 
-		return "userDetail";
+		return "customuserDetail";
 	}
 
 	@RequestMapping(value = "/userDetail/avatar", method = RequestMethod.GET)

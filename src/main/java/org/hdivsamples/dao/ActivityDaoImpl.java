@@ -33,6 +33,7 @@ public class ActivityDaoImpl implements ActivityDao {
 			jdbcTemplate.update(sql, new Object[] { date, description, number, amount, availablebalance, });
 		}
 		catch (Exception e) {
+			System.out.println("error");
 			System.out.println(e);
 		}
 	}
