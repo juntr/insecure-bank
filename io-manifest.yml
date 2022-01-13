@@ -14,6 +14,9 @@ environment:
   jiraApiUrl:  JIRA_API_URL 
   jiraUserName:  JIRA_USERNAME 
   jiraAuthToken:  JIRA_AUTH_TOKEN
+security:
+  pipeline:
+    toolchain: "Synopsys"
 # for WF client
 connectors:
 # - connector_name: slack
