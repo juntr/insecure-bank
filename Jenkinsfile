@@ -1,3 +1,3 @@
 @Library('intelligent-orchestration')
-import com.demo.*
-new com.demo.pipeline.EntryPoint().execute()
+import com.synopsys.*
+new com.synopsys.sigio.pipeline.EntryPoint().execute()
