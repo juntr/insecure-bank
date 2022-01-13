@@ -16,6 +16,7 @@ environment:
   jiraAuthToken:  JIRA_AUTH_TOKEN
 security:
   pipeline:
+    type: "Inline"
     toolchain: "Synopsys"
 # for WF client
 connectors:
