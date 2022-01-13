@@ -20,13 +20,13 @@ environment:
   jiraUserName: <<JIRA_USERNAME>>
   jiraAuthToken: <<JIRA_AUTH_TOKEN>>
 connectors:
-- connector_name: slack
-  fields:
-    channelidentifier: <<SLACK_CHANNEL_ID>>
-    bearertoken: <<SLACK_TOKEN>>
-- connector_name: msteams
-  fields:
-    webhook_url:  <<MSTEAMS_WEBHOOK_URL>>
+# - connector_name: slack
+#   fields:
+#     channelidentifier: <<SLACK_CHANNEL_ID>>
+#     bearertoken: <<SLACK_TOKEN>>
+# - connector_name: msteams
+#   fields:
+#     webhook_url:  <<MSTEAMS_WEBHOOK_URL>>
 - connector_name: jira
   fields:
     issuetype: Bug
@@ -35,22 +35,22 @@ connectors:
     url: <<JIRA_API_URL>>
     username: <<JIRA_USERNAME>>
     authtoken: <<JIRA_AUTH_TOKEN>>
-- connector_name: bitbucket
-  fields:
-    workspace_name: <<SCM_OWNER>>
-    repository_name: <<SCM_REPO_NAME>>
-    commit_id: <<BITBUCKET_COMMIT_ID>>
-    username: <<BITBUCKET_USERNAME>>
-    app_password: <<BITBUCKET_PASSWORD>>
-- connector_name: github
-  fields:
-    file_path: workflowengine-results.sarif.json
-    owner_name: <<GITHUB_OWNER_NAME>>
-    repository_name: <<GITHUB_REPO_NAME>>
-    ref: <<GITHUB_REF>>
-    commit_id: <<GITHUB_COMMIT_ID>>
-    username: <<GITHUB_USERNAME>>
-    accesstoken: <<GITHUB_ACCESS_TOKEN>>
+# - connector_name: bitbucket
+#   fields:
+#     workspace_name: <<SCM_OWNER>>
+#     repository_name: <<SCM_REPO_NAME>>
+#     commit_id: <<BITBUCKET_COMMIT_ID>>
+#     username: <<BITBUCKET_USERNAME>>
+#     app_password: <<BITBUCKET_PASSWORD>>
+# - connector_name: github
+#   fields:
+#     file_path: workflowengine-results.sarif.json
+#     owner_name: <<GITHUB_OWNER_NAME>>
+#     repository_name: <<GITHUB_REPO_NAME>>
+#     ref: <<GITHUB_REF>>
+#     commit_id: <<GITHUB_COMMIT_ID>>
+#     username: <<GITHUB_USERNAME>>
+#     accesstoken: <<GITHUB_ACCESS_TOKEN>>
 security:
   pipeline:
     type: "Inline"
