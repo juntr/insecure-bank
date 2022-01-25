@@ -45,7 +45,7 @@ pipeline {
           --scm.type="github" \
           --scm.owner="${GITHUB_USERNAME}" \
           --scm.repo.name="${IO_POC_PROJECT_NAME}" \
-          --scm.branch.name="main" \
+          --scm.branch.name="master" \
           --github.username="${GITHUB_USERNAME}" \
           --github.token="${GITHUB_ACCESS_TOKEN}" \
           --polaris.project.name="${IO_POC_PROJECT_NAME}" \
@@ -100,7 +100,7 @@ pipeline {
             rm -fr /tmp/polaris
             wget -q ${POLARIS_SERVER_URL}/api/tools/polaris_cli-linux64.zip
             unzip -j polaris_cli-linux64.zip -d /tmp
-            /tmp/polaris --persist-config --co project.name="${IO_POC_PROJECT_NAME}" --co project.branch="main" --co capture.build.buildCommands="null" --co capture.build.cleanCommands="null" --co capture.fileSystem="null" --co capture.coverity.autoCapture="enable"  configure
+            /tmp/polaris --persist-config --co project.name="${IO_POC_PROJECT_NAME}" --co project.branch="master" --co capture.build.buildCommands="null" --co capture.build.cleanCommands="null" --co capture.fileSystem="null" --co capture.coverity.autoCapture="enable"  configure
             /tmp/polaris analyze -w
           else
             echo "Skipping Coverity on Polaris based on IO Precription"
