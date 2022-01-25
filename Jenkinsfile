@@ -97,11 +97,11 @@ pipeline {
           echo "IS_SAST_ENABLED = ${IS_SAST_ENABLED}"
           if [ ${IS_SAST_ENABLED} = "true" ]; then
             echo "Running Coverity on Polaris based on IO Precription"
-            rm -fr /tmp/polaris
-            wget -q ${POLARIS_SERVER_URL}/api/tools/polaris_cli-linux64.zip
-            unzip -j polaris_cli-linux64.zip -d /tmp
-            /tmp/polaris --persist-config --co project.name="${IO_POC_PROJECT_NAME}" --co project.branch="master" --co capture.build.buildCommands="null" --co capture.build.cleanCommands="null" --co capture.fileSystem="null" --co capture.coverity.autoCapture="enable"  configure
-            /tmp/polaris analyze -w
+//             rm -fr /tmp/polaris
+//             wget -q ${POLARIS_SERVER_URL}/api/tools/polaris_cli-linux64.zip
+//             unzip -j polaris_cli-linux64.zip -d /tmp
+//             /tmp/polaris --persist-config --co project.name="${IO_POC_PROJECT_NAME}" --co project.branch="master" --co capture.build.buildCommands="null" --co capture.build.cleanCommands="null" --co capture.fileSystem="null" --co capture.coverity.autoCapture="enable"  configure
+//             /tmp/polaris analyze -w
           else
             echo "Skipping Coverity on Polaris based on IO Precription"
           fi
@@ -116,9 +116,9 @@ pipeline {
           echo "IS_SCA_ENABLED = ${IS_SCA_ENABLED}"
           if [ ${IS_SCA_ENABLED} = "true" ]; then
             echo "Running Blackduck based on IO Precription"
-            rm -fr /tmp/detect7.sh
-            curl -s -L https://detect.synopsys.com/detect7.sh > /tmp/detect7.sh
-            bash /tmp/detect7.sh --blackduck.url="${BLACKDUCK_URL}" --blackduck.api.token="${BLACKDUCK_ACCESS_TOKEN}" --detect.project.name="${IO_POC_PROJECT_NAME}" --detect.project.version.name=${IO_POC_PROJECT_VERSION} --blackduck.trust.cert=true
+//             rm -fr /tmp/detect7.sh
+//             curl -s -L https://detect.synopsys.com/detect7.sh > /tmp/detect7.sh
+//             bash /tmp/detect7.sh --blackduck.url="${BLACKDUCK_URL}" --blackduck.api.token="${BLACKDUCK_ACCESS_TOKEN}" --detect.project.name="${IO_POC_PROJECT_NAME}" --detect.project.version.name=${IO_POC_PROJECT_VERSION} --blackduck.trust.cert=true
           else
             echo "Skipping Blackduck based on IO Precription"
           fi
