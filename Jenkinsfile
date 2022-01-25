@@ -9,8 +9,6 @@ pipeline {
     IO_ACCESS_TOKEN = credentials('IO-AUTH-TOKEN')
     GITHUB_USERNAME = "akshayme-synp"
     GITHUB_ACCESS_TOKEN = credentials('Github-AuthToken')
-    CODEDX_ACCESS_TOKEN = credentials('CODEDX_API_KEY')
-    CODEDX_PROJECT_ID = 2
     IS_SAST_ENABLED = "false"
     IS_SCA_ENABLED = "false"
     IS_DAST_ENABLED = "false"
@@ -55,9 +53,6 @@ pipeline {
           --blackduck.url="${BLACKDUCK_URL}" \
           --blackduck.api.token="${BLACKDUCK_ACCESS_TOKEN}" \
           --jira.enable="false" \
-          --codedx.url="${CODEDX_SERVER_URL}" \
-          --codedx.api.key="${CODEDX_ACCESS_TOKEN}" \
-          --codedx.project.id="${CODEDX_PROJECT_ID}" \
           --IS_SAST_ENABLED="${IS_SAST_ENABLED}" \
           --IS_SCA_ENABLED="${IS_SCA_ENABLED}" \
           --IS_DAST_ENABLED="${IS_DAST_ENABLED}"
@@ -125,7 +120,7 @@ pipeline {
           '''
       }
     }
-    stage('IO Workflow - CodeDx') {
+    stage('IO Workflow') {
       steps {
         echo "Preparing to run IO Workflow Engine"
         sh '''
@@ -147,14 +142,11 @@ pipeline {
           --blackduck.url="${BLACKDUCK_URL}" \
           --blackduck.api.token="${BLACKDUCK_ACCESS_TOKEN}" \
           --jira.enable="false" \
-          --codedx.url="${CODEDX_SERVER_URL}" \
-          --codedx.api.key="${CODEDX_ACCESS_TOKEN}" \
-          --codedx.project.id="${CODEDX_PROJECT_ID}" \
           --IS_SAST_ENABLED="${IS_SAST_ENABLED}" \
           --IS_SCA_ENABLED="${IS_SCA_ENABLED}" \
           --IS_DAST_ENABLED="${IS_DAST_ENABLED}"
         '''
-        echo "Running IO Workflow Engine with CodeDx"
+        echo "Running IO Workflow Engine"
         sh '''
           java -jar WorkflowClient.jar --workflowengine.url="${WORKFLOW_URL}" --io.manifest.path=synopsys-io.json
         '''
