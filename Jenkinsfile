@@ -191,7 +191,6 @@ pipeline {
           echo "Breaker Status - $(IS_BREAKER_STATUS_ENABLED)"
           if [ ${IS_BREAKER_STATUS_ENABLED} = "true" ]; then
               echo "$(jq -r '.breaker.criteria[0]' wf-output.json)"
-              input id: 'alert', message: 'Build breaker criteria matched. Do you want to proceed?', ok: 'Go ahead'
           fi
         '''
       }
