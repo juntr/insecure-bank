@@ -3,7 +3,9 @@ pipeline {
  
   environment {
     IO_POC_PROJECT_NAME = "insecure-bank"
-    IO_POC_PROJECT_VERSION = "1.0.0"
+    POLARIS_PROJECT_NAME = "akshayme-synp/insecure-bank"
+    BLACKDUCK_PROJECT_NAME = "insecure-bank"
+    BLACKDUCK_PROJECT_VERSION = "1.0.0"
     POLARIS_ACCESS_TOKEN = credentials('polaris-token')
     BLACKDUCK_ACCESS_TOKEN = credentials('BlackDuck-AuthToken')
     IO_ACCESS_TOKEN = credentials('IO-AUTH-TOKEN')
@@ -46,10 +48,10 @@ pipeline {
           --scm.branch.name="master" \
           --github.username="${GITHUB_USERNAME}" \
           --github.token="${GITHUB_ACCESS_TOKEN}" \
-          --polaris.project.name="${IO_POC_PROJECT_NAME}" \
+          --polaris.project.name="${POLARIS_PROJECT_NAME}" \
           --polaris.url="${POLARIS_SERVER_URL}" \
           --polaris.token="${POLARIS_ACCESS_TOKEN}" \
-          --blackduck.project.name="${IO_POC_PROJECT_NAME}:${IO_POC_PROJECT_VERSION}" \
+          --blackduck.project.name="${BLACKDUCK_PROJECT_NAME}:${BLACKDUCK_PROJECT_VERSION}" \
           --blackduck.url="${BLACKDUCK_URL}" \
           --blackduck.api.token="${BLACKDUCK_ACCESS_TOKEN}" \
           --jira.enable="false" \
@@ -95,7 +97,7 @@ pipeline {
             rm -fr /tmp/polaris
             wget -q ${POLARIS_SERVER_URL}/api/tools/polaris_cli-linux64.zip
             unzip -j polaris_cli-linux64.zip -d /tmp
-            /tmp/polaris --persist-config --co project.name="${IO_POC_PROJECT_NAME}" --co project.branch="master" --co capture.build.buildCommands="null" --co capture.build.cleanCommands="null" --co capture.fileSystem="null" --co capture.coverity.autoCapture="enable"  configure
+            /tmp/polaris --persist-config --co project.name="${POLARIS_PROJECT_NAME}" --co project.branch="master" --co capture.build.buildCommands="null" --co capture.build.cleanCommands="null" --co capture.fileSystem="null" --co capture.coverity.autoCapture="enable"  configure
             /tmp/polaris analyze -w
           else
             echo "Skipping Coverity on Polaris based on IO Precription"
@@ -113,7 +115,7 @@ pipeline {
             echo "Running Blackduck based on IO Precription"
             rm -fr /tmp/detect7.sh
             curl -s -L https://detect.synopsys.com/detect7.sh > /tmp/detect7.sh
-            bash /tmp/detect7.sh --blackduck.url="${BLACKDUCK_URL}" --blackduck.api.token="${BLACKDUCK_ACCESS_TOKEN}" --detect.project.name="${IO_POC_PROJECT_NAME}" --detect.project.version.name=${IO_POC_PROJECT_VERSION} --blackduck.trust.cert=true
+            bash /tmp/detect7.sh --blackduck.url="${BLACKDUCK_URL}" --blackduck.api.token="${BLACKDUCK_ACCESS_TOKEN}" --detect.project.name="${BLACKDUCK_PROJECT_NAME}" --detect.project.version.name=${BLACKDUCK_PROJECT_VERSION} --blackduck.trust.cert=true
           else
             echo "Skipping Blackduck based on IO Precription"
           fi
@@ -135,10 +137,10 @@ pipeline {
           --project.name="${IO_POC_PROJECT_NAME}" \
           --workflow.url="${WORKFLOW_URL}" \
           --workflow.version="${WORKFLOW_CLIENT_VERSION}" \
-          --polaris.project.name="${IO_POC_PROJECT_NAME}" \
+          --polaris.project.name="${POLARIS_PROJECT_NAME}" \
           --polaris.url="${POLARIS_SERVER_URL}" \
           --polaris.token="${POLARIS_ACCESS_TOKEN}" \
-          --blackduck.project.name="${IO_POC_PROJECT_NAME}:${IO_POC_PROJECT_VERSION}" \
+          --blackduck.project.name="${BLACKDUCK_PROJECT_NAME}:${BLACKDUCK_PROJECT_VERSION}" \
           --blackduck.url="${BLACKDUCK_URL}" \
           --blackduck.api.token="${BLACKDUCK_ACCESS_TOKEN}" \
           --jira.enable="false" \
