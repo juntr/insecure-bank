@@ -117,7 +117,7 @@ pipeline {
             curl -s -L https://detect.synopsys.com/detect7.sh > /tmp/detect7.sh
             bash /tmp/detect7.sh --blackduck.url="${BLACKDUCK_URL}" --blackduck.api.token="${BLACKDUCK_ACCESS_TOKEN}" --detect.project.name="${BLACKDUCK_PROJECT_NAME}" --detect.project.version.name=${BLACKDUCK_PROJECT_VERSION} --blackduck.trust.cert=true
           else
-            echo "Skipping Blackduck based on IO Precription"
+            echo "Skip Blackduck based on IO Precription"
           fi
           '''
       }
